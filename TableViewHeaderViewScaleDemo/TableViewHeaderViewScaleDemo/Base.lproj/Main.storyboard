@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="n8Y-eQ-4Pg">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="o1y-en-LHm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n8Y-eQ-4Pg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ir-fP-yPq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ogy-w7-va7" kind="relationship" relationship="rootViewController" id="fVj-sa-hny"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gLl-Wu-8cD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="426" y="-240"/>
+        </scene>
+        <!--HeaderView Demo-->
+        <scene sceneID="bY3-V7-pt4">
+            <objects>
+                <tableViewController id="ogy-w7-va7" customClass="ViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TrS-iC-3Lu">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Qa8-Ur-b3Z">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vly-YF-ZQf">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="250" id="l5f-89-C3o"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="l5f-89-C3o"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="l5f-89-C3o"/>
+                                        </mask>
+                                    </variation>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="vly-YF-ZQf" firstAttribute="leading" secondItem="Qa8-Ur-b3Z" secondAttribute="leading" id="7qJ-Rm-ktC"/>
+                                <constraint firstAttribute="trailing" secondItem="vly-YF-ZQf" secondAttribute="trailing" id="YxT-ZJ-ePX"/>
+                                <constraint firstItem="vly-YF-ZQf" firstAttribute="top" secondItem="Qa8-Ur-b3Z" secondAttribute="top" id="hlP-Ii-Dgp"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="rect" keyPath="frame">
+                                    <rect key="value" x="0.0" y="0.0" width="0.0" height="250"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <variation key="default">
+                                <mask key="subviews">
+                                    <exclude reference="vly-YF-ZQf"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <exclude reference="7qJ-Rm-ktC"/>
+                                    <exclude reference="YxT-ZJ-ePX"/>
+                                    <exclude reference="hlP-Ii-Dgp"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="subviews">
+                                    <include reference="vly-YF-ZQf"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <include reference="7qJ-Rm-ktC"/>
+                                    <include reference="YxT-ZJ-ePX"/>
+                                    <include reference="hlP-Ii-Dgp"/>
+                                </mask>
+                            </variation>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Eiu-R6-Cy9">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eiu-R6-Cy9" id="9eN-LS-mhX">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ogy-w7-va7" id="SpW-c9-bS8"/>
+                            <outlet property="delegate" destination="ogy-w7-va7" id="hv0-tb-37N"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="HeaderView Demo" id="bQL-cP-aPO"/>
+                    <connections>
+                        <outlet property="headerViewHeight" destination="l5f-89-C3o" id="vtI-AQ-1np"/>
+                        <outlet property="headerViewLeft" destination="7qJ-Rm-ktC" id="UqQ-B5-9yg"/>
+                        <outlet property="headerViewRight" destination="YxT-ZJ-ePX" id="dkM-ms-exF"/>
+                        <outlet property="headerViewTop" destination="hlP-Ii-Dgp" id="94R-rT-6jw"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Odl-xA-Fpn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1215" y="-240"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backImage.jpg" width="1024" height="768"/>
+    </resources>
+</document>
